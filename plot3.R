@@ -8,13 +8,11 @@ for(i in 7:9)
         df[,i]<-as.numeric(df[,i])
 }
 png("plot3.png")
+par(bg="transparent")
 plot(range(df$t),range(df[,7:9]),type="n",xlab="",ylab="Energy sub metering")
 for(i in 7:9)
 {
         lines(df$t,df[,i],col=colors[i-6])
 }
 legend("topright",legend=names(df[,7:9]),lty=1,col=colors)
-# df[,3]<-as.numeric(df[,3])
-# png("plot2.png")
-# plot(df$t,df[,3],type="l",xlab="",ylab="Global Activer Power (kilowatts)")
 dev.off()

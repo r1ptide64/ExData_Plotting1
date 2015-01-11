@@ -7,7 +7,7 @@ for(i in 3:9)
         df[,i]<-as.numeric(df[,i])
 }
 png("plot4.png")
-par(mfrow=c(2,2))
+par(mfrow=c(2,2),bg="transparent")
 plot(df$t,df[,3],type="l",xlab="",ylab="Global Activer Power")
 plot(df$t,df$Voltage,type="l",xlab="datetime",ylab="Voltage")
 plot(range(df$t),range(df[,7:9]),type="n",xlab="",ylab="Energy sub metering")
